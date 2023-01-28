@@ -39,7 +39,21 @@ require("bufferline").setup({
     right_mouse_command='bdelete %d',
   },
 })
-vim.api.nvim_set_keymap("n", "<Leader>n", ":tabnew<CR>", {noremap=true,silent=true})
 vim.api.nvim_set_keymap("n", "<Leader>n", ":BufferLineCycleNext<CR>", {noremap=true,silent=true})
-vim.api.nvim_set_keymap("n", "<Leader>tm", ":tabmove<CR>", {noremap=true,silent=true})
-vim.api.nvim_set_keymap("n", "<Leader>tc", ":tabclose<CR>", {noremap=true,silent=true})
+vim.api.nvim_set_keymap("n", "<Leader>tn", ":tabnew<CR>", {noremap=true,silent=true})
+vim.api.nvim_set_keymap("n", "<Leader>tc", ":BufferLinePickClose<CR>", {noremap=true,silent=true})
+
+----- lualine -----
+require('lualine').setup()
+
+----- treesitter -----
+require('treesitter').setup({
+  ensure_installed = { "json", "html", "css", "vim", "lua", "javascript", "typescript", "tsx","go","rust","zig" },
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+})
+
+----- mason -----
+require("mason").setup()

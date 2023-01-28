@@ -1,12 +1,12 @@
-pcall(
-  vim.cmd,
-  [[
-    augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-    augroup end
-  ]]
-)
+--pcall(
+--  vim.cmd,
+--  [[
+--    augroup packer_user_config
+--    autocmd!
+--    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+--    augroup end
+--  ]]
+--)
 local packer=require('packer')
 
 packer.startup({
@@ -19,8 +19,18 @@ packer.startup({
     -- catppuccin
     use('catppuccin/nvim')
     -- nvim-tree
-    use({'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons' })
+    use({'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons'})
     -- bufferline
-		use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+    use({'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'})
+    -- lualine
+    use({'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true}})
+    -- treesitter
+    use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
+    -- lsp mason
+    use({'williamboman/mason.nvim'})
+    -- lspconfig
+    use({ 'neovim/nvim-lspconfig'})
+
+
   end
 })
