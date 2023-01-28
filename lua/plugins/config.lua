@@ -47,13 +47,13 @@ vim.api.nvim_set_keymap("n", "<Leader>tc", ":BufferLinePickClose<CR>", {noremap=
 require('lualine').setup()
 
 ----- treesitter -----
---require('treesitter').setup({
---  ensure_installed = { "json", "html", "css", "vim", "lua", "javascript", "typescript", "tsx","go","rust","zig" },
---  highlight = {
---    enable = true,
---    additional_vim_regex_highlighting = false,
---  },
---})
+require('treesitter').setup({
+  ensure_installed = { "json", "html", "css", "vim", "lua", "javascript", "typescript", "tsx","go","rust","zig" },
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+})
 
 ----- mason -----
 require("mason").setup()

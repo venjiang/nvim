@@ -31,7 +31,7 @@ packer.startup({
     -- lualine
     use({'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true}})
     -- treesitter
-    --use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
+    use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
     -- lsp mason
     use({'williamboman/mason.nvim'})
     -- lspconfig
