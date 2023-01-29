@@ -21,4 +21,8 @@ map('n','<Leader><CR>',':nohl<CR>',opt)
 -- tabs
 map('n','<S-h>',':bprevious<CR>',opt)
 map('n','<S-l>',':bnext<CR>',opt)
+map("n", "<Leader>tn", ":tabnew<CR>", opt)
+map("n", "<Leader>c", ":bdelete!<CR>", opt)
+-- file
+map('n','<Leader>s',':w<CR>',opt)
 

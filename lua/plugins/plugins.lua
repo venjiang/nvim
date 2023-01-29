@@ -36,9 +36,10 @@ packer.startup({
     -- telescope
     use({'nvim-telescope/telescope.nvim', tag = '0.1.1', requires = { {'nvim-lua/plenary.nvim'} }})
     -- lsp mason
-    use({'williamboman/mason.nvim'})
+    use('williamboman/mason.nvim')
+    use('williamboman/mason-lspconfig.nvim')
     -- lspconfig
-    use({ 'neovim/nvim-lspconfig'})
+    use('neovim/nvim-lspconfig')
     -- surround
     use("ur4ltz/surround.nvim")
     -- Comment
