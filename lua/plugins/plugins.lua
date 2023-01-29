@@ -41,9 +41,22 @@ packer.startup({
     -- lspconfig
     use('neovim/nvim-lspconfig')
     -- surround
-    use("ur4ltz/surround.nvim")
+    use({
+     "ur4ltz/surround.nvim",
+      config = function()
+        require('surround').setup({mappings_style = "sandwich"})
+      end
+    })
     -- Comment
-    use("numToStr/Comment.nvim")
+    use({"numToStr/Comment.nvim",
+      config = function()
+      require("Comment").setup()
+    end
+    })
+    -- null-ls
+    use({'jose-elias-alvarez/null-ls.nvim', requires = 'nvim-lua/plenary.nvim'})
+    -- copilot
+    use('github/copilot.vim')
 
     -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
