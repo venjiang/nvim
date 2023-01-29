@@ -17,7 +17,7 @@ packer.startup({
   function(use)
     -- packer
     use('wbthomason/packer.nvim')
-    -- colorscheme
+    ----------------------------------------------
     -- tokyonight
     use('folke/tokyonight.nvim')
     -- onedark
@@ -30,12 +30,19 @@ packer.startup({
     use({'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'})
     -- lualine
     use({'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true}})
+    ----------------------------------------------
     -- treesitter
     use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
+    -- telescope
+    use({'nvim-telescope/telescope.nvim', tag = '0.1.1', requires = { {'nvim-lua/plenary.nvim'} }})
     -- lsp mason
     use({'williamboman/mason.nvim'})
     -- lspconfig
     use({ 'neovim/nvim-lspconfig'})
+    -- surround
+    use("ur4ltz/surround.nvim")
+    -- Comment
+    use("numToStr/Comment.nvim")
 
     -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

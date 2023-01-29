@@ -1,3 +1,3 @@
 require('general.basic')
-require('general.keybindings')
+require('general.keymap')
 require('general.colorscheme')

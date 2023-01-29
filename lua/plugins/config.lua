@@ -30,7 +30,7 @@ require("nvim-tree").setup({
     },
   },
 })
-vim.api.nvim_set_keymap("n", "<Leader>nn", ":NvimTreeToggle<CR>", {noremap=true,silent=true})
+vim.keymap.set("n", "<Leader>nn", ":NvimTreeToggle<CR>", {noremap=true,silent=true})
 
 ----- bufferline -----
 require("bufferline").setup({
@@ -39,15 +39,16 @@ require("bufferline").setup({
     right_mouse_command='bdelete %d',
   },
 })
-vim.api.nvim_set_keymap("n", "<Leader>n", ":BufferLineCycleNext<CR>", {noremap=true,silent=true})
-vim.api.nvim_set_keymap("n", "<Leader>tn", ":tabnew<CR>", {noremap=true,silent=true})
-vim.api.nvim_set_keymap("n", "<Leader>tc", ":BufferLinePickClose<CR>", {noremap=true,silent=true})
+vim.keymap.set("n", "<Leader>n", ":BufferLineCycleNext<CR>", {noremap=true,silent=true})
+vim.keymap.set("n", "<Leader>tn", ":tabnew<CR>", {noremap=true,silent=true})
+vim.keymap.set("n", "<Leader>tc", ":BufferLinePickClose<CR>", {noremap=true,silent=true})
+vim.keymap.set("n", "<Leader>c", ":bdelete<CR>", {noremap=true,silent=true})
 
 ----- lualine -----
 require('lualine').setup()
 
 ----- treesitter -----
-require('treesitter').setup({
+require('nvim-treesitter.configs').setup({
   ensure_installed = { "json", "html", "css", "vim", "lua", "javascript", "typescript", "tsx","go","rust","zig" },
   highlight = {
     enable = true,
@@ -57,3 +58,10 @@ require('treesitter').setup({
 
 ----- mason -----
 require("mason").setup()
+
+----- telescope -----
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>f', builtin.find_files, {})
+vim.keymap.set('n', '<leader>g', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>b', builtin.buffers, {})
+vim.keymap.set('n', '<leader>h', builtin.help_tags, {})

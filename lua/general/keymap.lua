@@ -1,7 +1,7 @@
 -- leader
 vim.g.mapleader=','
 vim.g.maplocalleader=','
-local map=vim.api.nvim_set_keymap
+local map=vim.keymap.set
 local opt={noremap=true,silent=true}
 -- windows
 map('n','<C-h>','<C-w>h',opt)
@@ -18,3 +18,7 @@ map('n','<C-l>','<C-w>l',opt)
 map('i','<C-h>','<ESC>I',opt)
 map('i','<C-l>','<ESC>A',opt)
 map('n','<Leader><CR>',':nohl<CR>',opt)
+-- tabs
+map('n','<S-h>',':bprevious<CR>',opt)
+map('n','<S-l>',':bnext<CR>',opt)
+
